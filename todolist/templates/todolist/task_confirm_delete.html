@@ -1,0 +1,14 @@
+{% extends 'layout/basic.html' %}
+
+{% block title %} Удаление задачи {% endblock %}
+
+{% block content %}
+<a href="{% url 'tasks' %}">Вернуться назад</a>
+<form method="POST">
+    {% csrf_token %}
+    <p>
+        Вы уверены, что хотите удалить эту задачу? "{{ task }}"
+        <input type="submit" value="Удалить">
+    </p>
+</form>
+{% endblock content %}

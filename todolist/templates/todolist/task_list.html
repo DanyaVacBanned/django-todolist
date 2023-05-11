@@ -1,0 +1,55 @@
+{% extends "layout/basic.html" %}
+
+{% block title %}
+Список задач
+{% endblock title %}
+
+{% block content %}
+
+
+<header>
+    <nav>
+        <div class="user-auth-info">
+            {% if request.user.is_authenticated %}
+            <p>{{request.user}}</p>
+            <a href="{% url 'logout' %}">Выйти</a>
+            {% else %}
+            <a href="{% url 'login' %}">Войти</a>
+            {% endif %}
+        </div>
+    </nav>
+</header>
+<hr>
+<div class="search">
+    <form method="GET">
+        <input type="text" name="search-area", value="{{search_input}}">
+        <input type="submit" value="найти">
+    </form>
+</div>
+<a href="{% url 'tasks' %}">Список задач</a>
+
+<table>
+    <tr>
+        <th>Задачи</th>
+    </tr>
+    <tr>
+        <td>
+            <a href="{% url 'create-task' %}">Создать задачу</a>
+        </td>
+    </tr>
+    {% for task in tasks %}
+    <tr>
+        <td>{{task.title}}</td>
+        <td><a href="{% url 'task' task.id%}">Посмотреть</a></td>
+        <td><a href="{% url 'update-task' task.id%}">Редактировать</a></td>
+        <td><a href="{% url 'delete-task' task.id%}">Удалить</a></td>
+    </tr>
+    {% empty %}
+    <h3>
+        Нет задач
+    </h3>
+    {% endfor %}
+
+</table>
+
+{% endblock content %}

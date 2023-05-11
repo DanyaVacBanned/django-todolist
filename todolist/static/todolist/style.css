@@ -1,0 +1,16 @@
+
+
+body{
+    background-color: rgb(37, 37, 37);
+    margin: 100px;
+}
+
+.container
+{
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgb(112, 112, 112, 80);
+    color:white;
+    padding: 50px 75px;
+    
+}
