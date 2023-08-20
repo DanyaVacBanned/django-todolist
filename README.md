@@ -1,8 +1,6 @@
 <h1> DJANGO TODOLIST </h1>
 
-<h2>
-    <p> This is my try to modify TODO LIST project by <a href='https://github.com/divanov11/Django-To-Do-list-with-user-authentication'>this dude</a>
-</h2>
+
 
 <h2>
     <p> TODO xd </p>
